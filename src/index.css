@@ -1,0 +1,10 @@
+body {
+  padding: 0 60px;
+}
+
+.divito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,13 +1,26 @@
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
+import { useState } from 'react';
+import { List, ListItem } from '@mui/material';
+import { AddCategory } from './components/AddCategory';
 
 export const GifExpertApp = () => {
+  const [categories, setCategories] = useState(['Dragon Ball Z', 'Drake', 'Rick and Morty']);
+
+  const handleAddCategory = (value) => {
+    setCategories([...categories, value]);
+  };
+
   return (
     <>
-      <CssBaseline enableColorScheme />
+      <CssBaseline />
       <h2>GifExpertApp</h2>
       <hr />
-      <Button variant='contained'>Hello</Button>
+      <AddCategory setCategories={handleAddCategory} />
+      <List>
+        {categories.map((category) => (
+          <ListItem key={category}>{category}</ListItem>
+        ))}
+      </List>
     </>
   );
 };
