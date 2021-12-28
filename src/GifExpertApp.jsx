@@ -1,10 +1,11 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { useState } from 'react';
-import { List, ListItem } from '@mui/material';
+import { List } from '@mui/material';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(['Dragon Ball Z', 'Drake', 'Rick and Morty']);
+  const [categories, setCategories] = useState(['Dragon Ball Z']);
 
   const handleAddCategory = (value) => {
     setCategories([...categories, value]);
@@ -18,7 +19,7 @@ export const GifExpertApp = () => {
       <AddCategory setCategories={handleAddCategory} />
       <List>
         {categories.map((category) => (
-          <ListItem key={category}>{category}</ListItem>
+          <GifGrid key={category} category={category} />
         ))}
       </List>
     </>
