@@ -1,35 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { GifGridItem } from './GifGridItem';
+import Grid from '@mui/material/Grid';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 
 export const GifGrid = ({ category }) => {
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=D6gVdyaY26uP8M2Ibq0PcVsjWqJnkK8Z&q=${category}&limit=10`;
-
-  const [images, setImages] = useState([]);
-
-  const getData = async () => {
-    const response = await axios(url).catch(console.error);
-    const { data } = await response.data;
-
-    const gifs = data.map((img) => {
-      return {
-        id: img.id,
-        title: img.title,
-        url: img.images.downsized_medium.url,
-      };
-    });
-
-    setImages(gifs);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const { data: images, loading } = useFetchGifs(category);
 
   return (
-    <div>
-      {images.map((img) => {
-        return <img key={img.id} src={img.url} alt={img.title} />;
-      })}
-    </div>
+    <>
+      <h1>{category}</h1>
+      <Grid container spacing={{ xs: 1, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }} sx={{ flexGrow: 0 }}>
+        {loading && <h2>Loading...</h2>}
+        {images.map((img) => (
+          <Grid item xs={2} sm={4} md={4} key={img.id}>
+            <GifGridItem {...img} />
+          </Grid>
+        ))}
+      </Grid>
+    </>
   );
 };

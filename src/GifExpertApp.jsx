@@ -8,7 +8,7 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState(['Dragon Ball Z']);
 
   const handleAddCategory = (value) => {
-    setCategories([...categories, value]);
+    setCategories([value, ...categories]);
   };
 
   return (
