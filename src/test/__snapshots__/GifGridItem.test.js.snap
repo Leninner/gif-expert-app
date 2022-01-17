@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Debe estar en el documento Debe mostrar el componente correctamente 1`] = `
+<ForwardRef(Card)
+  sx={
+    Object {
+      "maxWidth": 345,
+    }
+  }
+>
+  <ForwardRef(CardMedia)
+    component="img"
+    height="140"
+  />
+  <ForwardRef(CardContent)>
+    <ForwardRef(Typography)
+      component="h2"
+      gutterBottom={true}
+      variant="h5"
+    />
+  </ForwardRef(CardContent)>
+</ForwardRef(Card)>
+`;
