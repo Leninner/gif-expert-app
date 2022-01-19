@@ -1,4 +1,4 @@
-import { GifGridItem } from '../components/GifGridItem';
+import { GifGridItem } from '../../components/GifGridItem';
 import { shallow } from 'enzyme';
 import '@testing-library/jest-dom';
 
@@ -13,11 +13,4 @@ describe('Debe estar en el documento', () => {
   test('Debe mostrar el componente correctamente', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
-  test('Debe mostrar la imagen correctamente', () => {
-    const img = wrapper.find('img');
-    expect(img.prop('src')).toBe(url);
-  });
-
-  test('Debe mostrar la clase correctamente', () => {});
 });
