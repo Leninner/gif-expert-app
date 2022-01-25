@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente Add Category Debe mostrarse correctamente 1`] = `
+<form
+  className="divito"
+  onSubmit={[Function]}
+>
+  <ForwardRef(TextField)
+    focused={true}
+    label="Category"
+    onChange={[Function]}
+    value=""
+  />
+  <p />
+  <ForwardRef(Button)
+    type="submit"
+    variant="contained"
+  >
+    Add Category
+  </ForwardRef(Button)>
+</form>
+`;
