@@ -3,6 +3,7 @@ import { AddCategory } from '../../components/AddCategory';
 
 describe('Pruebas en el componente Add Category', () => {
   const setCategories = jest.fn();
+
   let wrapper;
 
   beforeEach(() => {
@@ -29,5 +30,18 @@ describe('Pruebas en el componente Add Category', () => {
 
     form.simulate('submit', { preventDefault() {} });
     expect(setCategories).not.toHaveBeenCalled();
+  });
+
+  test('Debe de llamar el setCategories y limpiar la caja de texto', () => {
+    const value = 'Hola mundo';
+
+    const input = wrapper.find('ForwardRef(TextField)');
+    input.simulate('change', { target: { value } });
+
+    const form = wrapper.find('form');
+    form.simulate('submit', { preventDefault() {} });
+
+    expect(setCategories).toHaveBeenCalledTimes(1);
+    expect(input.text().trim()).toBe('');
   });
 });

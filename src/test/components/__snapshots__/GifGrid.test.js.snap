@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vamos a tener una buena prueba Debe coincidir con el snapshot 1`] = `
+<Fragment>
+  <h1>
+    One Punch
+  </h1>
+  <ForwardRef(Grid)
+    columns={
+      Object {
+        "md": 12,
+        "sm": 8,
+        "xs": 2,
+      }
+    }
+    container={true}
+    spacing={
+      Object {
+        "md": 3,
+        "xs": 1,
+      }
+    }
+    sx={
+      Object {
+        "flexGrow": 0,
+      }
+    }
+  >
+    <h2>
+      Loading...
+    </h2>
+  </ForwardRef(Grid)>
+</Fragment>
+`;
