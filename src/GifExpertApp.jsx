@@ -4,8 +4,8 @@ import { List } from '@mui/material';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(['Dragon Ball Z']);
+export const GifExpertApp = ({ defaultState = [] }) => {
+  const [categories, setCategories] = useState(defaultState);
 
   const handleAddCategory = (value) => {
     setCategories([value, ...categories]);

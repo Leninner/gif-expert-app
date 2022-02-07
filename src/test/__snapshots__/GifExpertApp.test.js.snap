@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifExpertApp should match with the snapshot 1`] = `
+<Fragment>
+  <CssBaseline />
+  <h2>
+    GifExpertApp
+  </h2>
+  <hr />
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <ForwardRef(List) />
+</Fragment>
+`;
